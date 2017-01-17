@@ -30,12 +30,22 @@ namespace Day2_01._17
     {
         static void Main(string[] args)
         {
-            DogStuff(); // 1)Select block of code to make into method
-                        // 2)Right-click
-                        // 3)Select "Quick Actions and Refactoring"
-                        // 4)Select Extract Method
-                        // 5)Press Enter
-                        // 6)Rename Method 
+            /*
+            DogStuff(); 
+            ------ Extract Method ------
+            // 1)Select block of code to make into method
+            // 2)Right-click
+            // 3)Select "Quick Actions and Refactoring"
+            // 4)Select Extract Method
+            // 5)Press Enter
+            // 6)Rename Method 
+            */
+
+            Warrior dirt = new Warrior("Dirt");
+            Warrior soap = new Warrior("Soap");
+
+            soap.Attack(dirt, soap);
+            
 
         }
 
