@@ -30,6 +30,17 @@ namespace Day2_01._17
     {
         static void Main(string[] args)
         {
+            DogStuff(); // 1)Select block of code to make into method
+                        // 2)Right-click
+                        // 3)Select "Quick Actions and Refactoring"
+                        // 4)Select Extract Method
+                        // 5)Press Enter
+                        // 6)Rename Method 
+
+        }
+
+        private static void DogStuff()
+        {
             var rascal = new Dog("Rascal"); //Good practice to use var just to easily 
                                             //see which variables are being set from another class
             Console.WriteLine(rascal); //Overriding ToString allows us to use this instead of 
@@ -65,7 +76,6 @@ namespace Day2_01._17
             rascal.RemoveFriend(annie);
 
             rascal.GetDogFriends();
-
         }
     }
 
