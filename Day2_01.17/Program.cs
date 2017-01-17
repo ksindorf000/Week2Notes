@@ -15,14 +15,17 @@ namespace Day2_01._17
      * 
      * "Encapsulating Logic"
      
-     -------- PRINCIPLES OF OOP -------- 
+     -------- SOLID PRINCIPLES OF OOP -------- 
      * 1) Single Responsibility Principle
      *      A class should only have "responsibilities" that make
      *      sense for their objects
      *          ex) You have two classes, "Dog" and "Car." A dog should
      *          not be able to make a car go faster and a car should not 
      *          be able to bark.
-     * 2) 
+     * 2) Open/Close
+     * 3) Liskov Substitution
+     * 4) I
+     * 5) D
      * 
      */
 

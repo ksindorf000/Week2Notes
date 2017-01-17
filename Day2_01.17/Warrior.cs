@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 namespace Day2_01._17
 {
     /*
-         ------ Enumerator -------
-         * 
-        */
+    ------ Enumerator -------
+    Keep track of the state of a class instance
+    */
+
     enum State
     {
         Alive, Dead, Graveyard, Revived
@@ -17,44 +18,44 @@ namespace Day2_01._17
 
     class Warrior
     {
-        private int hitPts;
+        //Class Members
+        private int lifePts;
         public string name;
-        private bool playOn = true;
         private int attPts = 3;
         public State currentState = State.Alive;
-        
 
         //Constructor
-        public Warrior (string _name)
+        public Warrior(string _name)
         {
             name = _name;
-            hitPts = 10;
+            lifePts = 10;
         }
 
-        public void LowerHP()
+        //Lower Life Points
+        public void LowerLP()
         {
-            if (hitPts <= attPts)
+            if (lifePts <= attPts)
             {
                 Console.WriteLine($"{name} is dead!");
-                hitPts = 0;
+                lifePts = 0;
                 currentState = State.Dead;
             }
             else
             {
-                hitPts -= attPts;
+                lifePts -= attPts;
             }
         }
 
         public void Attack(Warrior enemy)
         {
             Console.WriteLine($"{name} attacks {enemy.name}!");
-            enemy.LowerHP();
-          
+            enemy.LowerLP();
+
         }
 
         public override string ToString()
         {
-            return $"{name}: {hitPts}";
+            return $"{name}: {lifePts}";
         }
 
     }
