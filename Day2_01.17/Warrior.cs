@@ -9,6 +9,7 @@ namespace Day2_01._17
     /*
     ------ Enumerator -------
     Keep track of the state of a class instance
+
     */
 
     enum State
