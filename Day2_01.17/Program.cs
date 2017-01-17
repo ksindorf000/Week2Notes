@@ -6,79 +6,25 @@ using System.Threading.Tasks;
 
 namespace Day2_01._17
 {
-        /*******************************
-         * OBJECT ORIENTED PROGRAMMING *
-         *******************************/
-        /* 
-         * C => C++ => C#
-         * C++ language: First object oriented programming language 
-         * 
-         * "Encapsulating Logic"
-         */
-
-        /*
-         * Class: the instructions for the object
-         *  Access Modifiers = 
-         *      public: Read/Write available to other classes
-         *      private: Read/Write only in current class
-         *      protected
-         *      sealed
-         *  Object = 
-         *      Dog
-         *  Properties/Variables/Attributes =
-         *      int Age 
-         *      float(..ing point number) Size
-         *      string Color
-         *  Methods = 
-         *      Bark();
-         *      WagTail();
-         *      RollOver();
-         *  Constructors = 
-         *      methods that run when an object is created
-         *      doesn't have a return type
-         *          
-         * Syntax:
-         *  var dog = new Dog(); //new instance of Class Dog
-         *  dog.age(get(), set());
-         *  dog.Bark();
-         *  
-         */
-
-    class Dog //Class definition
-    {
-        private int Age; //Property
-        public string name; //Member
-
-        //Constructor
-        //      doesn't have a return type
-        public Dog(string _name) //use "_" to avoid name collision
-        {
-            Age = 0;
-            name = _name;
-        }
-
-        //Method
-        public void Birthday()
-        {
-            Age++;
-        }
-
-        //Accessor Method for private variable
-        public int GetAge()
-        {
-            return Age;
-        }
-
-        public int DogYears()
-        {
-            return Age *= 7;
-        }
-
-        //Shorter syntax for accessor method:
-        
-
-    }
-
+    /*******************************
+     * OBJECT ORIENTED PROGRAMMING *
+     *******************************/
+    /* 
+     * C => C++ => C#
+     * C++ language: First object oriented programming language 
+     * 
+     * "Encapsulating Logic"
+     
+     -------- PRINCIPLES OF OOP -------- 
+     * 1) Single Responsibility Principle
+     *      A class should only have "responsibilities" that make
+     *      sense for their objects
+     *          ex) You have two classes, "Dog" and "Car." A dog should
+     *          not be able to make a car go faster and a car should not 
+     *          be able to bark.
+     * 2) 
+     * 
+     */
 
     class Program
     {
@@ -86,7 +32,8 @@ namespace Day2_01._17
         {
             var rascal = new Dog("Rascal"); //Good practice to use var just to easily 
                                             //see which variables are being set from another class
-            Console.WriteLine(rascal.name);
+            Console.WriteLine(rascal); //Overriding ToString allows us to use this instead of 
+                                       //Console.WriteLine(rascal.name);
 
             //Birthday() isn't accessible except to the Dog instance
             rascal.Birthday();
@@ -99,6 +46,36 @@ namespace Day2_01._17
 
             var dogYears = rascal.DogYears();
             Console.WriteLine(dogYears);
+
+            Console.WriteLine(rascal);
+
+            Dog luke = new Dog("Luke");
+            Dog trixie = new Dog("Trixie");
+            Dog annie = new Dog("Annie");
+
+            rascal.AddFriend(luke);
+            rascal.AddFriend(trixie);
+            rascal.AddFriend(annie);
+            rascal.AddFriend(annie);
+
+            luke.Birthday();
+
+            rascal.GetDogFriends();
+
+            rascal.RemoveFriend(annie);
+
+            rascal.GetDogFriends();
+
         }
     }
+
+    /******************************
+    *           HOMEWORK          *
+    *******************************/
+
+    /*
+     * Create a class and interact with it.
+     *      ex) Model what it looks like to attend TIY
+     *          Model what it looks like to learn to swim
+     */
 }
