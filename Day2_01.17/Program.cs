@@ -44,8 +44,15 @@ namespace Day2_01._17
             Warrior dirt = new Warrior("Dirt");
             Warrior soap = new Warrior("Soap");
 
-            soap.Attack(dirt, soap);
-            
+            while (dirt.currentState == State.Alive && soap.currentState == State.Alive)
+            {
+                Console.Clear();
+                soap.Attack(dirt);
+                Console.WriteLine("\n");
+                Console.WriteLine(dirt);
+                Console.WriteLine(soap);
+                Console.ReadLine();
+            }
 
         }
 

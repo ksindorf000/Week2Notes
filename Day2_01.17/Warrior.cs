@@ -6,10 +6,23 @@ using System.Threading.Tasks;
 
 namespace Day2_01._17
 {
+    /*
+         ------ Enumerator -------
+         * 
+        */
+    enum State
+    {
+        Alive, Dead, Graveyard, Revived
+    }
+
     class Warrior
     {
         private int hitPts;
         public string name;
+        private bool playOn = true;
+        private int attPts = 3;
+        public State currentState = State.Alive;
+        
 
         //Constructor
         public Warrior (string _name)
@@ -20,14 +33,23 @@ namespace Day2_01._17
 
         public void LowerHP()
         {
-            hitPts -= 3;
+            if (hitPts <= attPts)
+            {
+                Console.WriteLine($"{name} is dead!");
+                hitPts = 0;
+                currentState = State.Dead;
+            }
+            else
+            {
+                hitPts -= attPts;
+            }
         }
 
-        public void Attack(Warrior enemy, Warrior attacker)
+        public void Attack(Warrior enemy)
         {
-            Console.WriteLine($"{attacker} attacks {enemy}!");
+            Console.WriteLine($"{name} attacks {enemy.name}!");
             enemy.LowerHP();
-            Console.WriteLine($"{enemy.name} now has {enemy.hitPts} life points! \n");
+          
         }
 
         public override string ToString()
