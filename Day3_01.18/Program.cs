@@ -37,7 +37,7 @@ namespace Day3_01._18
          *      | Day 3           |     | Day 3           |
          *      | "Shapes"        |     | "Tests"         |
          *      -------------------     -------------------
-         *      -Circle                 Reference to "Shapes" 
+         *      -Circle                 Reference to "Day3_Shapes" 
          *      -Square                     - Solution Explorer
          *      -Shape                      - Project > References > Add Reference
          *          -Area                 --------------------
@@ -48,6 +48,10 @@ namespace Day3_01._18
          *                                  
          * Referenced classes must be public
          * Include "Using <ProjectName>;"
+         * 
+         * How many tests are the right number of tests?
+         *      There is no right answer
+         *      Learning what to test takes time
          */
 
 
