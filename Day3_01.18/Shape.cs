@@ -8,29 +8,30 @@ namespace Day3_01._18
 {
     class Shape
     {
-        public double height; 
+        public double height;
         public double width;
         public double radius;
-        public string shapeType;
 
-        public Shape(double _height, double _width, double _radius, string _shapeType)
+        public Shape() { } //Default Constructor still needed
+
+        //----------Overload the constructor to allow a different set of parameters---------//
+
+        //Circle Constructor
+        public Shape(double _radius)
+        {
+            radius = _radius;
+        }
+
+        //Square Constructor
+        public Shape(double _height, double _width)
         {
             height = _height;
             width = _width;
-            radius = _radius;
-            shapeType = _shapeType;
         }
 
-        public double CalcArea()
+        //virtual = subclasses can override this method
+        public virtual double CalcArea()
         {
-            if (shapeType == "square")
-            {
-                return height * width;
-            }
-            else if (shapeType == "circle")
-            {
-                return Math.Pow(radius, 2) * Math.PI;
-            }
             return 0;
         }
 

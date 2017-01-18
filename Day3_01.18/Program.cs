@@ -31,13 +31,17 @@ namespace Day3_01._18
 
         static void Main(string[] args)
         {
-            Shape square = new Shape(2, 5, 0, "square");
+            var square = new Square(2, 5);
             double sqArea = square.CalcArea();
             Console.WriteLine(sqArea);
 
-            Shape circle = new Shape(0, 0, 12, "circle");
+            var circle = new Circle(12);
             double circArea = circle.CalcArea();
             Console.WriteLine(circArea);
+
+            //Shape doesn't exist but the virtual CalcArea() in Shape class returns 0
+            var nanogram = new Shape();
+            double nanoArea = nanogram.CalcArea();
         }
     }
 }
