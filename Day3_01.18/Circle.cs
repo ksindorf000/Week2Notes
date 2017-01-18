@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace Day3_01._18
 {
-    class Circle : Shape
+    public class Circle : Shape
     {
+        //Property (prop + tab + tab)
+        public double diameter {
+            get
+            {
+                return radius * 2;
+            }
+        }
+
         //Constructor : inherited constructor
         public Circle(double _radius) : base(_radius)
         {

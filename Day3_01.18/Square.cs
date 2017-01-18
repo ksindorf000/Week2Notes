@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Day3_01._18
 {
-    class Square : Shape
+    public class Square : Shape
     {
         //Constructor : inherited constructor
         public Square(double _height, double _width) : base(_height, _width)
