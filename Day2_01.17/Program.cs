@@ -22,7 +22,7 @@ namespace Day2_01._17
      *          ex) You have two classes, "Dog" and "Car." A dog should
      *          not be able to make a car go faster and a car should not 
      *          be able to bark.
-     * 2) Open/Close
+     * 2) Open/Closed
      * 3) Liskov Substitution
      * 4) I
      * 5) D
