@@ -14,6 +14,15 @@ namespace Day4_BikeTest
             Assert.AreEqual(0, sut.GetSpeed());
             Assert.AreEqual(1, sut.GetModifier());
             Assert.AreEqual(0, sut.location);
+            Assert.AreEqual(12, sut.GetSpeedLimit());
+        }
+
+        [TestMethod]
+        public void BikeCanBeCreatedWithArgs()
+        {
+            var sut = new Bike(.6, 20);
+            Assert.AreEqual(.6, sut.GetModifier());
+            Assert.AreEqual(20, sut.GetSpeedLimit());
         }
 
         [TestMethod]
@@ -33,9 +42,9 @@ namespace Day4_BikeTest
                 sut.Accelerate();
             }
             //Brittle test (9:58AM) breaks easily
-            //Assert.AreEqual(sut.speedLimit, sut.GetSpeed()); 
+            //      Assert.AreEqual(sut.speedLimit, sut.GetSpeed()); 
             //Better way...
-            Assert.AreEqual(sut.speedLimit, sut.GetSpeed()); 
+            Assert.AreEqual(sut.GetSpeedLimit(), sut.GetSpeed()); 
         }
 
         [TestMethod]
@@ -57,7 +66,7 @@ namespace Day4_BikeTest
                 sut.Accelerate();
             }
             sut.MoveForward();
-            Assert.AreEqual(sut.speedLimit, sut.location);
+            Assert.AreEqual(sut.GetSpeedLimit(), sut.location);
         }
     }
 }

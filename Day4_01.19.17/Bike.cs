@@ -10,16 +10,27 @@ namespace Day4_01._19._17
     {
         private int speed = 0;
         private double speedModifier = 1;
-        public int speedLimit = 12;
+        private int speedLimit = 12;
         public int location = 0;
 
         public Bike()
         {
         }
 
+        public Bike(double _speedModifier, int _speedLimit)
+        {
+            speedModifier = _speedModifier;
+            speedLimit = _speedLimit;
+        }
+
         public int GetSpeed()
         {
             return speed;
+        }
+
+        public int GetSpeedLimit()
+        {
+            return speedLimit;
         }
 
         public double GetModifier()
