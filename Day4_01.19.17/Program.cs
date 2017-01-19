@@ -42,6 +42,12 @@ namespace Day4_01._19._17
                     isRunning = TickRace(currentBike, finishLine, isRunning);
                 }
             }
+
+            foreach (var bike in raceBikes)
+            {
+                Console.Write(string.Join(", ", bike.location));
+            }
+
         }
 
         public static bool TickRace(Bike currentBike, int finishLine, bool isRunning)
@@ -58,5 +64,7 @@ namespace Day4_01._19._17
 
             return isRunning;
         }
+        
+
     }
 }

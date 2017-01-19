@@ -25,7 +25,7 @@ namespace Day4_01._19._17
 
         public int GetSpeed()
         {
-            return speed;
+            return (int)(speed * speedModifier);
         }
 
         public int GetSpeedLimit()
