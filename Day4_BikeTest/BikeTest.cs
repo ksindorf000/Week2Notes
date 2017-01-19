@@ -5,6 +5,37 @@ using Day4_01._19._17;
 namespace Day4_BikeTest
 {
     [TestClass]
+    public class RaceTest
+    {
+        [TestMethod]
+        public void RaceCanIdentifyWinner()
+        {
+            Bike testBike = new Bike();
+            int finishLine = 10;
+            bool isRunning = true;
+
+            testBike.location = 40;
+
+            isRunning = Program.TickRace(testBike, finishLine, isRunning);
+            Assert.AreEqual(false, isRunning); //(11:53AM)
+        }
+
+        [TestMethod]
+        public void RaceWillAdvanceIfNoWinner()
+        {
+            Bike testBike = new Bike();
+            int finishLine = 20;
+            bool isRunning = true;
+           
+            isRunning = Program.TickRace(testBike, finishLine, isRunning);
+
+            Assert.AreEqual(true, isRunning);
+            Assert.AreEqual(testBike.location, 1);
+        }
+    }
+
+
+    [TestClass]
     public class BikeTest
     {
         [TestMethod]

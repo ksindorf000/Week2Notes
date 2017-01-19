@@ -17,8 +17,8 @@ namespace Day4_01._19._17
     public class BikeFactory
     {
         
-
-        public static List<Bike> CreateXBikes(int count)
+        //"Slight of Code" (11:25AM)
+        public static List<Bike> CreateBikeList(int count)
         {
             var bikeList = new List<Bike>();
             var rng = new Random();
@@ -26,21 +26,28 @@ namespace Day4_01._19._17
 
             for (int i = 0; i < count; i++)
             {
-                bool isRandBike = rng.Next(10) < 4; //40% of bikes should be random
-
-                if (isRandBike)
-                {
-                    //Can't pass double so 8/10 = .8 and 13/10 = 1.3
-                    double speedModifier = (rng.Next(8, 13) / 10); 
-                    int speedLimit = rng.Next(7, 20);
-
-                    bikeList.Add(new Bike(speedModifier, speedLimit));
-                }
-
-                bikeList.Add(new Bike());
+                CreateBike(bikeList, rng);
             }
 
             return bikeList;
+        }
+
+        private static void CreateBike(List<Bike> bikeList, Random rng)
+        {
+            bool isRandBike = rng.Next(10) < 4; //40% of bikes should be random
+
+            if (isRandBike)
+            {
+                //Can't pass double so 8/10 = .8 and 13/10 = 1.3
+                double speedModifier = (rng.Next(8, 13) / 10);
+                int speedLimit = rng.Next(7, 20);
+
+                bikeList.Add(new Bike(speedModifier, speedLimit));
+            }
+            else
+            {
+                bikeList.Add(new Bike());
+            }
         }
     }
 }

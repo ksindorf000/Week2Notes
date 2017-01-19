@@ -12,7 +12,7 @@ namespace Day4.Bike
         [TestMethod]
         public void BikeFactoryCanCreateXBikes()
         {
-            var listOfBikes = BikeFactory.CreateXBikes(5);
+            var listOfBikes = BikeFactory.CreateBikeList(5);
             Assert.AreEqual(5, listOfBikes.Count);
         }
     }

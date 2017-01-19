@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Day4_01._19._17
 {
-    class Program
+    public class Program
     {
         /*
         * -------- SOLID PRINCIPLES OF OOP -------- 
@@ -29,6 +29,34 @@ namespace Day4_01._19._17
 
         static void Main(string[] args)
         {
+            //(11:30AM)
+            List<Bike> raceBikes = BikeFactory.CreateBikeList(4); //Since static, you don't have to create an instance
+            int finishLine = 1000;
+            bool isRunning = true;
+
+            while (isRunning)
+            {
+                for (int i = 0; i < raceBikes.Count; i++)
+                {
+                    var currentBike = raceBikes[i];
+                    isRunning = TickRace(currentBike, finishLine, isRunning);
+                }
+            }
+        }
+
+        public static bool TickRace(Bike currentBike, int finishLine, bool isRunning)
+        {
+                if (currentBike.location >= finishLine)
+                {
+                    isRunning = false;
+                }
+                else
+                {
+                    currentBike.Accelerate();
+                    currentBike.MoveForward();
+                }
+
+            return isRunning;
         }
     }
 }
